@@ -6,7 +6,7 @@
 [![macos](https://img.shields.io/codecov/c/github/justjavac/moonbit-ci/main?flag=macos&label=macos)](https://codecov.io/gh/justjavac/moonbit-ci)
 [![windows](https://img.shields.io/codecov/c/github/justjavac/moonbit-ci/main?flag=windows&label=windows)](https://codecov.io/gh/justjavac/moonbit-ci)
 
-`justjavac/ci` detects metadata exposed by Continuous Integration providers from MoonBit native programs. It is inspired by [`justjavac/deno-ci`](https://github.com/justjavac/deno-ci) and keeps the same result vocabulary while using MoonBit naming conventions.
+`justjavac/ci` detects metadata exposed by Continuous Integration providers from MoonBit native programs.
 
 This package only supports the native backend because the complete detection path may call local `git` commands through `moonbitlang/async/process`.
 

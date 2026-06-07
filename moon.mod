@@ -20,7 +20,7 @@ keywords = [
   "native",
 ]
 
-description = "Native-only CI environment detection for MoonBit, inspired by justjavac/deno-ci."
+description = "Native-only CI environment detection for MoonBit."
 
 warnings = ""
 
