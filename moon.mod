@@ -2,7 +2,7 @@ name = "justjavac/ci"
 
 version = "0.1.0"
 
-readme = "README.md"
+readme = "README.mbt.md"
 
 import {
   "moonbitlang/async@0.19.2",
