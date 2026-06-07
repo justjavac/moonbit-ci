@@ -49,8 +49,17 @@ jobs:
           irm https://cli.moonbitlang.com/install/powershell.ps1 | iex
           "$HOME/.moon/bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
-      - name: Test with coverage
+      - name: Test with coverage (Unix)
+        if: runner.os != 'Windows'
         shell: bash
+        run: |
+          moon update
+          moon test --target native --enable-coverage
+          moon coverage analyze -p justjavac/ci -- -f cobertura -o coverage.xml
+
+      - name: Test with coverage (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
         run: |
           moon update
           moon test --target native --enable-coverage
@@ -62,6 +71,7 @@ jobs:
           files: coverage.xml
           flags: ${{ matrix.coverage_flag }}
           disable_search: true
+          skip_validation: true
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
