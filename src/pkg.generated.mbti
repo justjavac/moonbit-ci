@@ -1,0 +1,45 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "justjavac/ci"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn detect_from_env(Map[String, String]) -> Info?
+
+pub async fn env_ci(cwd? : String) -> Info
+
+pub async fn env_ci_from(Map[String, String], cwd? : String) -> Info
+
+pub async fn is_ci(cwd? : String) -> Bool
+
+pub async fn name(cwd? : String) -> String
+
+pub async fn service(cwd? : String) -> String
+
+// Errors
+
+// Types and methods
+pub(all) struct Info {
+  name : String
+  service : String
+  is_ci : Bool
+  commit : String?
+  tag : String?
+  build : String?
+  build_url : String?
+  branch : String?
+  job : String?
+  job_url : String?
+  is_pr : Bool?
+  pr : String?
+  pr_branch : String?
+  slug : String?
+  root : String?
+} derive(Eq, ToJson, @debug.Debug)
+
+// Type aliases
+
+// Traits
+
